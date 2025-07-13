@@ -1,0 +1,346 @@
+pirmitiv → stack
+reference → hip, hipning adresi → stack
+
+&& <=> and (va)
+|| <=> or (yoki)
+?? <=> nullish
+! <=> Not (hamma narsani teskarisi)
+
+taqqoslash operatorlari:
+> < ==
+
+?? <=> || ga o'xshaydi, lekin null va underfiend oxtaradi xolos. qolgan hamma narsalarni true oladi.
+&& <=> noto'g'ri qiymat oxtaradi
+|| <=> to'g'ri qiymatni chiqaradi
+! <=> false → true true → false
+
+type conversion - bir turdan boshqa bir turga o'tish jarayoni
+
+faqat `` da ${} ishlatsa bo'ladi
+
+Math.trunc sonni nuqtadan keyingi joyiga qaramaydi:
+console.log(Math.trunc(1.999999...)) //1
+
+Math.floor sonni pastga qarab yaxlitlaydi:
+console.log(Math.floor(1.999999...)) //1
+
+truncdan farqi:
+console.log(Math.floor(-1,9999999...)) //2
+
+Math.round sonni oddiy usulda yaxlitlaydi
+
+JSda funksiyaning 3 xil sintaksisi bor:
+function decloration 
+function expression 
+arrow function
+
+argument va parametr
+
+funksiya qavsiga ochilgan narsa arguent deyiladi
+uni chaqirayotganda qavslar ichi tushgan qaiymat parametr deyiladi
+default parament → agar parametr hech narsa qo'yilmasa, default parament ishlaydi
+
+arrow functionda agar argument 1 dona bo'lsa qavslar kerak emas
+=> return vazifasini bajaradi
+
+key ga hohlagan o'zgaruvchi bersa bo'ladi
+
+•1 . dote natation 
+•2 [] bracket notation
+
+bir narsaning ichida boshqa narsa borligini tekshirish usullari:
+• in → "name" in "user" bor bo'lsa true, yo'q bo'lsa false
+• metod → user.hasOwnProperty("nomi") bor bo'lsa true yo'q bo'lsa false
+
+o'zgaruvchini o'zgarishiga ruxsat bermaslik:
+Object.freeze(element nomi) → o'zgartirib, qo'shib, o'chirib tashlash mumkin emas.
+Object.isFrozen(element nomi) → o'zgaruvchi muzlatilganmi yoki yo'q ko'rib beradi // true/false
+
+Object.seal(o'zgaruvchi nomi) → o'chirib tashlab,  qo'shib bo'lmaydi, lekin o'rgartirib bo'ladi
+Object.isSealed(o'zgaruvchi nomi) → o'zgaruvchi muzlatilganmi, ko'rib beradi // true/false
+
+?. → bir element ichida boshqa element borligini ko'rib beradi. agar bo'lsa qiymatini beradi, bo'lmasa underfiend chiqaradi
+
+for...in... indeks qaytaradi
+for...of... obyekt qaytaradi
+
+ternary operator → shart ? true : false
+true/false nima qilishligi yoziladi
+
+Number ga o'tkazish
+parseInt(narsa)/+narsa
+
+farqi:
++"" //0 / parseInt("") //NaN
++true //1 / parseInt(true) //NaN
+
+Stringga o'tkazish
+String(value)
+value.toString()
+value + ``
+
+inmutable - o'zgarmas, mutable - o'zgaruvchan
+string hamma metodlari inmutable
+HOF → callback olgan funcksiya HOF deyiladi. callback → HOFga parametr bo'lib berilsa callback deyiladi
+
+// ======== \\
+// Metodlar \\
+// ======== \\
+
+obyekt ichidagi funksiya metod deyiladi
+
+str.includes() → string olib, u bo'lsa true, bo'lmasa false chiqaradi. hech nima berilmasa false qaytaradi, ikkinchi parametrga index oladi va o'sha indexdan oxtaradi
+str.concat() → Stringga narsa qo'shib beradi. xech nima berilmasa stringni o'zini qaytaradi
+str.trim(), str.trimStart(), str.trimEnd → hech nima qabul qilmaydi, natija chiqaradi. Start boshidagi bo'shliqlarni olib tashlaydi, End oxiridagi. o'zi hamma joydan
+str.startsWith() → element oladi va o'sha element bilan boshlanganmi aytadi. true va false qaytaradi. hech nima berilmasa false beradi. ikkinchi parametrga index oladi va o'sh joudan tekshiradi
+str.endsWith() → startWithga o'xshaydi lekin oxiridan tekshiradi
+str.repeat() → son oladi va shuncha qaytaradi
+str.search() → element qidiradi, bo'lsa indexini chiqaradi
+str.toUpperCase() → hech nima olmaydi va hamma harflarni katta qilib beradi
+str.toLowerCase() → hech nima olmaydi va hamma harflarni kichik qilib beradi
+str.indexOf() → narsa oladi va o'sha narsa qaysi indexdaligini qaytaradi, ikkinchi parametriga qayerdan olish beriladi
+str.replace() → ikkita parametr oladi,va narsani o'zgartiradi
+str.replaceAll() → replacega o'xshaydi lekin hammasini o'zgartiradi
+str.slice() → ikkita index oladi va o'shalar ichidagi narsani qaytaradi
+
+[]~(￣▽￣)~*
+
+arr.shift() → array boshidagi elementni indexi bilan olib yo'qatvoradi. olib tashlangan elementni chiqaradi
+arr.unshift() → array boshiga element qo'shadi. array lengthi chiqaradi
+arr.join() → elementni string tipiga o'tkazadi. nima berilgan bo'lsa o'sha narsani elementlar orasiga soladi
+arr.push() → narsa oladi, va o'sha narsani array oxiriga qo'shadi
+arr.pop() → xechnima olmaydi, array oxiridagi narsani olib tashlaydi
+arr.reverse() → xechnima olmaydi, va array narsalarini indexlarini almashtirib beradi
+arr.map(), arr.forEach() → funksiya ichiga oladi va arrayni aylanib chiqadi, funksiya 3 ta parametr oladi - element, index va array. Map yangi array qaytaradi, forEach hech nima
+
+¯\(￣▽￣)/¯
+
+Modullar 2 turga bo'linadi - common js - .cjs va modul js - .mjs
+
+Object.entries() → obyekt kutadi va ularni array qilib qaytaradi
+Object.fromEntries() → Object.entries() ni teskarisi
+Object.keys() → obyekt kutadi va kalitlarini array ko'rinishida beradi
+Object.values() → Object.keys() ga o'xshaydi, lekin value olib beradi
+
+split("", limit) → obyektni array qilib beradi, birinchi parametrga nima qo'yilsa o'sha narsa kelganda aloshida string ochadi va davomini yozadi
+
+.toReverse → yangi array yaratadi
+.reverse → arrayni almashtiradi
+
+(._.)
+
+.filter() → inmutable, callbackga shart beriladi, agar shart true bo'lsa chiqaradi, arrayni oxirigacha boradi
+.find() → filterga o'xshaydi lekin element qaytaradi va kerakli narsa topganda arrayni to'xtatadi
+
+.every() → booleon qaytaradi, shartga qarab arrayni tekshiradi, arrayni ichidagi hamma narsa shartga tushsa true, kamida bittasi tushmasa false
+.some() → every()ga o'xshaydi, lekin teskarisi. kamida bittasi tushsa true
+
+arr.slice() → str.slice()ga o'xshidi, lekin indexdan indexgacha bo'lgan elementlarni qaytaradi
+
+☆*: .｡. o(≧▽≦)o .｡.:*☆
+
+JSda hatoliklarni oldini olish uchun try{}, catch{} finally{} ishlatiladi
+
+.splice() → bir qancha parametr oladi. index, deleteCount(indexdagi elementni o'chiradi), item1, item2... o'chirgan narsani qaytaradi
+.sort() → mutable, sortlab beradi
+.fill() → mutable, uchta parametr oladi: value, start, end
+
+(._.)
+
+rest va spread obyekt va arraylar uchun ishlatiladi
+rest → yig'ish, spread → sochish
+agar kelayotgan element yig'ilgan bo'lsa sochadi, sochilgan bo'lsa yig'adi
+
+:D
+
+.findIndex() → .findga o'xshaydi, lekin index qaytaradi
+.reduce() → .reduceRight() → ikkita parametr oladi: callback va value. callback 4 ta parametr oladi: value el index array
+
+JSON.parse() → "terjimon" JSONdan tarjima qiladi, 1chi parametri, JSONga aylantirilgan narsa, 2chi parametri callback, har birini aylanib chiqadi
+JSON.strigify → JSONgs tarjima qiladi, 1chi parametrgi value - majburiy parametr hisoblanadi va unga obyekt, array, string, number, booleon va null qiymat tushadi u ularni JSONga o'zgartiradi, 2chi parametr replacer - ixtiyoriy, qiymat JSONga almashtirishdan oldin uni sortlash yoki o'zgartirish uchun ishlatiladi, 3chi parametri space - qator boshida nechta space bo'lishini yozasiz
+
+XD
+
+addEventListener() → 3ta parametr oladi, event nomi, callback
+fetch() backendga so'rov jo'natadi, 2 ta parametr oladi, 1chisi url, string ko'rinishida, 2 chisi obyekt.  promise qaytaradi. uning ichida then() catch() va finally() bo'ladi
+
+
+pirmitiv → stack
+reference → heap, адрес heap → stack
+
+&& <=> and (ва)
+|| <=> or (йоки)
+?? <=> nullish
+! <=> Not (всё наоборот)
+
+
+< ==
+
+?? <=> похож на ||, но проверяет только null и undefined. Остальные значения считает за true.
+&& <=> ищет ложное значение
+|| <=> ищет истинное значение
+! <=> false → true, true → false
+
+type conversion — процесс преобразования одного типа в другой
+
+только в `` можно использовать ${}
+
+Math.trunc — отбрасывает дробную часть числа:
+console.log(Math.trunc(1.999999...)) // 1
+
+Math.floor — округляет число вниз:
+console.log(Math.floor(1.999999...)) // 1
+
+отличие от trunc:
+console.log(Math.floor(-1.999999...)) // -2
+
+Math.round — округляет по правилам математики
+
+В JS три способа записи функции:
+function declaration
+function expression
+arrow function
+
+argument и parameter:
+
+то, что пишется в скобках при вызове — аргумент
+то, что указано в скобках при объявлении — параметр
+default parameter → работает, если ничего не передали
+
+в arrow function, если один аргумент — скобки не нужны
+=> сам возвращает значение
+
+key можно называть как угодно
+
+•1. dot notation
+•2. bracket notation
+
+проверка, есть ли что-то внутри объекта:
+• in → "name" in user → true/false
+• метод → user.hasOwnProperty("name") → true/false
+
+запрет изменения переменной:
+Object.freeze(название) → нельзя изменять, добавлять или удалять
+Object.isFrozen(название) → возвращает true/false
+
+Object.seal(название) → нельзя удалять/добавлять, но можно менять
+Object.isSealed(название) → true/false
+
+?. → проверяет наличие вложенного элемента, если есть — вернёт значение, если нет — undefined
+
+for...in... возвращает ключи (индексы)
+for...of... возвращает значения
+
+ternary operator → условие ? если true : если false
+
+преобразование в Number:
+parseInt(значение) или +значение
+
+разница:
++"" → 0
+parseInt("") → NaN
++true → 1
+parseInt(true) → NaN
+
+преобразование в String:
+String(value)
+value.toString()
+value + ``
+
+inmutable — неизменяемый, mutable — изменяемый
+у строк все методы inmutable
+HOF → функция, принимающая другую функцию — это HOF
+callback → если передаётся внутрь HOF, это callback
+
+// ======== \
+// Методы \
+// ======== \
+
+функция внутри объекта называется методом
+
+str.includes() → ищет строку, возвращает true/false. Второй параметр — индекс, с которого начинать
+str.concat() → объединяет строки
+str.trim(), trimStart(), trimEnd() → убирают пробелы (с начала, конца, или везде)
+str.startsWith() → проверяет, начинается ли строка с чего-то. Можно указать индекс начала
+str.endsWith() → аналогично startsWith, но с конца
+str.repeat(n) → повторяет строку n раз
+str.search() → ищет и возвращает индекс
+str.toUpperCase() → все буквы — заглавные
+str.toLowerCase() → все буквы — строчные
+str.indexOf() → возвращает индекс элемента
+str.replace() → заменяет первое совпадение
+str.replaceAll() → заменяет все совпадения
+str.slice(start, end) → возвращает часть строки
+
+[](￣▽￣)*
+
+arr.shift() → удаляет и возвращает первый элемент
+arr.unshift() → добавляет в начало, возвращает новую длину
+arr.join() → объединяет элементы в строку
+arr.push() → добавляет в конец
+arr.pop() → удаляет и возвращает последний элемент
+arr.reverse() → переворачивает массив
+arr.map(), arr.forEach() → перебирают массив. Принимают элемент, индекс, сам массив.
+map возвращает новый массив, forEach — нет
+
+¯\(￣▽￣)/¯
+
+Модули бывают двух видов:
+common js → .cjs
+module js → .mjs
+
+Object.entries() → превращает объект в массив пар [ключ, значение]
+Object.fromEntries() → обратная операция
+Object.keys() → массив ключей
+Object.values() → массив значений
+
+split("", limit) → разбивает строку в массив по символу
+
+.toReverse() → возвращает новый массив
+.reverse() → меняет оригинальный массив
+
+(._.)
+
+.filter() → inmutable, возвращает элементы, удовлетворяющие условию
+.find() → возвращает первый подходящий элемент и завершает перебор
+
+.every() → возвращает true, если все элементы соответствуют условию
+.some() → возвращает true, если хотя бы один соответствует
+
+arr.slice() → как str.slice(), возвращает часть массива
+
+☆: .｡. o(≧▽≦)o .｡.:☆
+
+В JS для обработки ошибок используется try{}, catch{}, finally{}
+
+.splice() → принимает индекс, deleteCount и элементы для вставки. Возвращает удалённые
+.sort() → сортирует массив (меняет оригинал)
+.fill() → принимает значение, старт и конец. Заполняет массив
+
+(._.)
+
+rest и spread работают с объектами и массивами
+rest → собирает
+spread → разбрасывает
+если приходит собранное — разбрасывает, если разбросано — собирает
+
+:D
+
+.findIndex() → как find, но возвращает индекс
+.reduce() и reduceRight() → принимают callback и начальное значение.
+callback принимает: накопленное значение, элемент, индекс, массив
+
+JSON.parse() → превращает JSON-строку в объект
+1-й параметр — JSON-строка
+2-й параметр — callback, который проходит по каждому полю
+
+JSON.stringify() → превращает объект в JSON
+1-й параметр — данные
+2-й — replacer (опционально)
+3-й — количество пробелов в отступах
+
+XD
+
+addEventListener() → принимает название события и callback
+fetch() → отправляет запрос, принимает URL и объект с настройками
+возвращает promise, на который можно навесить .then(), .catch(), .finally()
